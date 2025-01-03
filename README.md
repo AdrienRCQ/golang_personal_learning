@@ -13,3 +13,7 @@ I also read the content of this famous file : os-release.
 After the basics, I'm going to handle the notions of packages and librairies. For that, I'm going to chek the 
 resources usage by using a public lib called gopsutil.
 I can now monitor CPU, RAM and Disk Usage.
+
+## IV] Process management :
+To continu our progress, I create a process manager whih ould list all proess whih are running and kill a speific proess by it's name.
+It taught me to reate a menu, how to read a user input and the processes management in golang.
