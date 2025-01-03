@@ -19,3 +19,5 @@ To continu our progress, I create a process manager whih ould list all proess wh
 It taught me to reate a menu, how to read a user input and the processes management in golang.
 
 ## V] Log Analyzer :
+
+## VI] TODO CLI-App :
