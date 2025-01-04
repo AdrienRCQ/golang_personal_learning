@@ -7,9 +7,9 @@
 },
 {
 "Title": "Buy Bread",
-"Completed": false,
+"Completed": true,
 "CreatedAt": "2025-01-03T23:05:23.245971417+01:00",
-"CompletedAt": null
+"CompletedAt": "2025-01-04T11:44:34.755234204+01:00"
 },
 {
 "Title": "Buy Avocado",
