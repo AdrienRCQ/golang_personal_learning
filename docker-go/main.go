@@ -12,6 +12,16 @@ import (
 )
 
 func main() {
+	containers, err := ListDockerContainers()
+	if err != nil {
+		log.Fatal(err)
+	}
+	for _, container := range containers {
+		fmt.Println(container)
+	}
+}
+
+func ListDockerContainers() ([][3]string, error) {
 	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		log.Fatalf("Unabel to create docker client, please make sure that docker is installed\n%s", err.Error())
@@ -24,6 +34,7 @@ func main() {
 		os.Exit(1)
 	}
 
+	var containers [][3]string
 	for _, image := range images {
 		repository := "<none>"
 		tag := "<none>"
@@ -34,7 +45,9 @@ func main() {
 		} else if len(image.RepoDigests) > 0 {
 			repository = strings.Split(image.RepoDigests[0], "@")[0]
 		}
-		fmt.Printf("%s\t%s:%s\n", image.ID[7:19], repository, tag)
+		containers := append(containers, [3]string{image.ID[7:19], repository, tag})
+		fmt.Println(containers)
 	}
+	return containers, nil
 
 }
